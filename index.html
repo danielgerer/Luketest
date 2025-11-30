@@ -3,40 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <title>Luke ist super</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        :root {
-            --bg-pink: #ff7ac4;   /* Pink */
-            --gold:    #ffd700;   /* Gold */
-        }
-
-        * {
-            box-sizing: border-box;
+        html, body {
+            height: 100%;
             margin: 0;
-            padding: 0;
         }
 
         body {
-            min-height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
-            background-color: var(--bg-pink);
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                         Roboto, Helvetica, Arial, sans-serif;
+            align-items: center;
+            background-color: #ff69b4; /* Pinker Hintergrund */
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            position: relative;
+        }
+
+        /* Kleines Menü oben links */
+        nav.main-nav {
+            position: fixed; /* bleibt oben links, auch beim Scrollen */
+            top: 0.75rem;
+            left: 1rem;
+            font-size: 0.9rem;
+        }
+
+        nav.main-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        nav.main-nav a {
+            color: #ffd700; /* Goldene Schrift */
+            text-decoration: none;
+            opacity: 0.9;
+            letter-spacing: 0.03em;
+            font-weight: 500;
+        }
+
+        nav.main-nav a:hover,
+        nav.main-nav a:focus {
+            opacity: 1;
+            text-decoration: underline;
         }
 
         h1 {
-            color: var(--gold);
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: #ffd700; /* Goldene Schrift */
+            font-size: 3rem;
             text-align: center;
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-            letter-spacing: 0.05em;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            letter-spacing: 0.08em;
+        }
+
+        /* Unsichtbare Platzhalter-Sektionen als spätere Ziele für das Menü */
+        section.placeholder {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <h1>Luke ist super</h1>
+    <!-- Menü oben links -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#ueber-luke">Über Luke</a></li>
+            <li><a href="#freunde">Freunde</a></li>
+            <li><a href="#cool-stuff">Cool Stuff</a></li>
+        </ul>
+    </nav>
+
+    <!-- Inhalt in der Mitte -->
+    <main id="home">
+        <h1>Luke ist super</h1>
+    </main>
+
+    <!-- Platzhalter, die du später mit Inhalt füllen kannst -->
+    <section id="ueber-luke" class="placeholder"></section>
+    <section id="freunde" class="placeholder"></section>
+    <section id="cool-stuff" class="placeholder"></section>
 </body>
 </html>
